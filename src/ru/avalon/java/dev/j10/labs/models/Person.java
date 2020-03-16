@@ -13,29 +13,54 @@ import ru.avalon.java.dev.j10.labs.commons.*;
  * </ol>
  */
 public class Person {
-
-    /**
+     /**
      * Возврвщает полное имя человека.
      * <p>
      * Если у человека есть Имя, Фамилия и Отчество, то
      * возвращет Имя, Фимилию и Отчество, разделённые пробелом.
-     * <p>
-     * Если у человека нет Отчества, но есть второе имя, то
-     * возвращает Имя, Первую букву второго имени, и Фамилию,
-     * разделённые пробелом. После Инициала второго имени
-     * должна стоять точка. Например, "Джером К. Джером".
-     * <p>
-     * Если у человека нет ни Отчества ни Второго имени, а
-     * есть только Имя и Фамилия, то возвращает их, разделённые
-     * пробелом.
      *
-     * @return имя человека в виде строки.
+     * @return Name Patronymic Surname
      */
-    public String getFullName(Passport passportOfPerson) {
+    
+    public String getFullName(Passport passportOfPerson, String p) {
         new Passport("", "", "");
         String fullName = passportOfPerson.getName() + " " + passportOfPerson.getPatronumic()+ " " +
                        passportOfPerson.getSurName();        
      return fullName;
+    }
+    
+    /**
+     * Возврвщает полное имя человека.
+     * 
+     * Если у человека нет Отчества, но есть второе имя, то
+     * возвращает Имя, Первую букву второго имени, и Фамилию,
+     * разделённые пробелом. После Инициала второго имени
+     * должна стоять точка. Например, "Джером К. Джером".
+     *
+     * @return Name S. Surname
+     */
+    
+    public String getFullName(Passport passportOfPerson, String x, String y) {
+        new Passport("", "", "");        
+        String fullName = passportOfPerson.getName() + " " + passportOfPerson.getFirst() + " " +
+                          passportOfPerson.getSurName();        
+        return fullName;
+    }
+    
+    /**
+     * Возврвщает полное имя человека.
+     * 
+     * Если у человека нет ни Отчества ни Второго имени, а
+     * есть только Имя и Фамилия, то возвращает их, разделённые
+     * пробелом.
+     *
+     * @return Name Surname
+     */
+    
+    public String getFullName(Passport passportOfPerson) {
+        new Passport("", "");
+        String fullName = passportOfPerson.getName() + " " + passportOfPerson.getSurName();        
+        return fullName;
     }
 
     /**
@@ -44,8 +69,10 @@ public class Person {
      * Возвращаемый адрес соответствует месту постоянной
      * регистрации человека, согласно паспортным данным.
      *
-     * @return адрес регистрации в виде строки.
+     * @return Адрес в формате:
+     *                         Страна, Почтовый индекс, Регион, Город, Улица, Номер дома, Номер квартиры
      */
+     
     public String getAddress(Address personAddres) {
         new Address("", "", "", "", "", "", "");
         String add = personAddres.getCountry()  + ", " +  personAddres.getPostCode() + ", " +
@@ -54,5 +81,5 @@ public class Person {
                      personAddres.getFlatsNumber();
         
         return add;
-    }
+    }    
 }

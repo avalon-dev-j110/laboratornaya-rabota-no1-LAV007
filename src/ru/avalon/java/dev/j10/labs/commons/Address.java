@@ -71,6 +71,7 @@ public Address(String country, String postCode,
     setFlatsNumber(flatsNumber);
     }
 }
+
 /*
  * TODO(Студент): Создайте класс Address.
  *
