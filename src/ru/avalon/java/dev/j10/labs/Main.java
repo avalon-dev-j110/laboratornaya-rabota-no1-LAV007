@@ -10,16 +10,16 @@ import ru.avalon.java.dev.j10.labs.commons.*;
 public class Main {
 
     public static void main(String[] args) {
-        Person smith = new Person();              
-        String fullNameSmith = smith.getFullName(new Passport("John", "Edvard", "Smith"));
-        String addressSmith = smith.getAddress(new Address("U.S.A", "15848",  "California",  "Los Angeles",  "Gold\'s Gym",  "34",  "7"));
+        Person smith = new Person(new Passport("John","Edvard","Smith"), new Address("U.S.A", "15848",  "California",  "Los Angeles",  "Gold\'s Gym",  "34",  "7"));              
+        String fullNameSmith = smith.getFullName();
+        String addressSmith = smith.getAddress();
         System.out.println(fullNameSmith + "\n" + addressSmith + "\n");
         
-        Person ivanov = new Person();        
-        String fullNameIvanov = ivanov.getFullName(new Passport("Ivan", "Ivanovich", "Ivanov"));
-        String addressIvanov = ivanov.getAddress(new Address("Russia", "188800", "Leningradskaya obl.", "Vyborg", "Turgeneva", "9", "25"));
+        Person ivanov = new Person(new Passport("Ivan","Ivanovich","Ivanov"), (new Address("Russia", "188800", "Leningradskaya obl.", "Vyborg", "Turgeneva", "9", "25")));              
+        String fullNameIvanov = ivanov.getFullName();
+        String addressIvanov = ivanov.getAddress();
         System.out.println(fullNameIvanov + "\n" + addressIvanov + "\n");
-      
+              
         /*
          * TODO(Студент): Создайте экземпляры класса 'Person'
          *

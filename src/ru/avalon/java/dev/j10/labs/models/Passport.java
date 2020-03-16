@@ -60,12 +60,6 @@ public class Passport {
     return secondName;
     }
     
-    public String getFirst() {
-    char first = secondName.charAt(0);
-    String firstL = first + ".";
-    return firstL;
-    }
-        
     public void setDateOfBirth (String setdateOfBirth) {
     this.dateOfBirth = setdateOfBirth;
     }
@@ -92,36 +86,6 @@ public class Passport {
     this.patronymic = patronymic;
     this.surName = surName;    
     }
-    
-    public Passport(String name, String secondName, String surName, String p) {
-    this.name = name;
-    this.secondName = secondName;
-    this.surName = surName;    
-    }
-    
-    public Passport(String name, String surName) {
-    this.name = name;
-    this.surName = surName;    
-    }        
+     
 }       
-    /*
-     * TODO(Студент): Закончить определение класса.
-     *
-     * 1. +Объявить атрибуты класса.
-     *
-     * 2. +Определить необходимые методы класса. Подумайте о
-     *    том, какие методы должны существовать в классе,
-     *    чтобы обеспечивать получение всей необходимой
-     *    информации о состоянии объектов данного класса.
-     *    
-     *    Все ли поля обязательно будут проинициализированы
-     *    при создании экземпляра? ----------НЕТ
-     *
-     * 3. Создайте все необходимые конструкторы класса.
-     *
-     * 4. +Помните о возможности существования перегруженных
-     *    конструкторов.
-     *
-     * 5. +Обеспечте возможность использования класса за
-     *    пределами пакета.
-     */
+    
