@@ -22,7 +22,7 @@ public class Person {
      * @return Name Patronymic Surname
      */
     
-    public String getFullName(Passport passportOfPerson, String p) {
+    public String getFullName(Passport passportOfPerson) {
         new Passport("", "", "");
         String fullName = passportOfPerson.getName() + " " + passportOfPerson.getPatronumic()+ " " +
                        passportOfPerson.getSurName();        
@@ -57,7 +57,7 @@ public class Person {
      * @return Name Surname
      */
     
-    public String getFullName(Passport passportOfPerson) {
+    public String getFullName(Passport passportOfPerson, String p) {
         new Passport("", "");
         String fullName = passportOfPerson.getName() + " " + passportOfPerson.getSurName();        
         return fullName;
