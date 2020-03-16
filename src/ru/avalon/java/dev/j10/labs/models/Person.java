@@ -1,4 +1,5 @@
 package ru.avalon.java.dev.j10.labs.models;
+import ru.avalon.java.dev.j10.labs.commons.*;
 
 /**
  * Представление о человеке.
@@ -30,11 +31,11 @@ public class Person {
      *
      * @return имя человека в виде строки.
      */
-    public String getFullName() {
-        /*
-         * TODO(Студент): Закончить определение метода 'getFullName()' класса 'Person'
-         */
-        return null;
+    public String getFullName(Passport passportOfPerson) {
+        new Passport("", "", "");
+        String fullName = passportOfPerson.getName() + " " + passportOfPerson.getPatronumic()+ " " +
+                       passportOfPerson.getSurName();        
+     return fullName;
     }
 
     /**
@@ -45,10 +46,13 @@ public class Person {
      *
      * @return адрес регистрации в виде строки.
      */
-    public String getAddress() {
-        /*
-         * TODO(Студент): Закончить определение метода 'getAddress()' класса 'Person'
-         */
-        return null;
+    public String getAddress(Address personAddres) {
+        new Address("", "", "", "", "", "", "");
+        String add = personAddres.getCountry()  + ", " +  personAddres.getPostCode() + ", " +
+                     personAddres.getRegion()  + ", " +  personAddres.getCity()  + ", " +
+                     personAddres.getStreet()  + ", " +  personAddres.getHousesNumber() + ", " +  
+                     personAddres.getFlatsNumber();
+        
+        return add;
     }
 }
