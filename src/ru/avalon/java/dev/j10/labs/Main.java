@@ -1,3 +1,4 @@
+//for verify
 package ru.avalon.java.dev.j10.labs;
 
 import ru.avalon.java.dev.j10.labs.models.*;
