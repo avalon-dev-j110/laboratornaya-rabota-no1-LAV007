@@ -1,30 +1,9 @@
 package ru.avalon.java.dev.j10.labs.models;
 
-/**
- * Представление о паспортных данных человека.
- * 
- * Паспортные данные должны включать:
- * 
- *  серию и номер документа;
- *  имя;
- *  фамилию;
- *  отчество;
- *  второе имя;
- *  день рождения;
- *  дату выдачи;
- *  орган, выдавший документ.
- * 
- */
 public class Passport {
-    private String serialAndNumberOfDoc;
-    private String name;
-    private String surName;
-    private String patronymic;
-    private String secondName;
-    private String dateOfBirth;
-    private String dateIssueDoc;
-    private String authorityIssueDoc;
-   
+    private String serialAndNumberOfDoc, name, surName, patronymic, secondName,
+                   dateOfBirth, dateIssueDoc, authorityIssueDoc;
+      
     public void setSerialAndNumberOfDoc (String serial){
     this.serialAndNumberOfDoc = serial;
     }
@@ -79,13 +58,26 @@ public class Passport {
     }
     public String getAuthorityIssueDoc () {
     return authorityIssueDoc;
-    }    
-    
-    public Passport(String name, String patronymic, String surName) {
-    this.name = name;
-    this.patronymic = patronymic;
-    this.surName = surName;    
     }
+
+    public String getFirst() {
+    char first = secondName.charAt(0);
+    String firstL = first + ".";
+    return firstL;
+    }
+      
+     public Passport(String name, String surName) {
+            this.name = name;            
+            this.surName = surName; 
+        }  
      
-}       
+    public Passport(String name, String patronymic, String surName) {
+        this.name = name;     
+        this.secondName = patronymic;
+        this.patronymic = patronymic;
+        this.surName = surName;
+        }   
+    }   
+
+          
     
