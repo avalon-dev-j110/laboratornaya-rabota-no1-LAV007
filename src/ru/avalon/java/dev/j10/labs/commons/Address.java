@@ -10,6 +10,17 @@ private String street;
 private String housesNumber;
 private String flatsNumber;
 
+public Address(String country, String postCode, String region, String city,
+               String street, String housesNumber, String flatsNumber){
+           setCountry(country);
+           setPostCode(postCode);
+           setRegion(region);
+           setCity(city);
+           setStreet(street);
+           setHousesNumber(housesNumber);
+           setFlatsNumber(flatsNumber);
+    }
+
 public void setCountry(String country) {
 this.country = country;
 }
@@ -58,16 +69,4 @@ this.flatsNumber = flatsNumber;
 public String getFlatsNumber() {
 return flatsNumber;
 }
-
-public Address(String country, String postCode,
-          String region, String city, String street, String housesNumber,
-          String flatsNumber){
-    setCountry(country);
-    setPostCode(postCode);
-    setRegion(region);
-    setCity(city);
-    setStreet(street);
-    setHousesNumber(housesNumber);
-    setFlatsNumber(flatsNumber);
-    }
 }
