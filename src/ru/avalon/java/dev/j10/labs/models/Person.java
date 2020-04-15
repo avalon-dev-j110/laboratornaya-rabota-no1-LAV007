@@ -2,14 +2,21 @@ package ru.avalon.java.dev.j10.labs.models;
 import ru.avalon.java.dev.j10.labs.commons.*;
 
 public class Person {
-    private Passport pass;
-    private Address add;    
-    private int has;
+    private final Passport pass;
+    private final Address add;
     
-    public Person(int has, Passport pass, Address add) {
-        this.has = has;
+    public enum Name {
+    HAS_NAME_SURNAME,
+    HAS_PATRONYMIC,
+    HAS_SECOND_NAME;    
+    }
+    
+    Name name;
+    
+    public Person(Name n, Passport pass, Address add) {
         this.pass = pass;
         this.add = add;
+        name = n;
     }
         
     public String getAddress() {
@@ -32,22 +39,23 @@ public class Person {
      * position in the constructor of a new Person. And in this case, the method will return a name of the person, first letter of
      * it's second name and it's a surname.
      * 
+     * @return 
      */
     public String getFullName() {
-       String fullName;
-       switch (has) {
-           case 1:
+       String fullName;       
+       switch (name) {
+           case HAS_NAME_SURNAME:
                 fullName = pass.getName() + " " + pass.getSurName();
                 return fullName;
-           case 2:
+           case HAS_PATRONYMIC:
                 fullName = pass.getName() + " " + pass.getPatronumic()+ " " +
                            pass.getSurName();        
                 return fullName;
-           case 3:
+           case HAS_SECOND_NAME:
                 fullName = pass.getName() + " " + pass.getFirst() + " " +
                            pass.getSurName();        
                 return fullName;
        }
-    return null;       
+    return "You entered incorrect value";       
     }   
 }
