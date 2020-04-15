@@ -3,6 +3,18 @@ package ru.avalon.java.dev.j10.labs.models;
 public class Passport {
     private String serialAndNumberOfDoc, name, surName, patronymic, secondName,
                    dateOfBirth, dateIssueDoc, authorityIssueDoc;
+    
+    public Passport(String name, String surName) {
+            this.name = name;            
+            this.surName = surName; 
+        }  
+     
+    public Passport(String name, String patronymic, String surName) {
+            this.name = name;     
+            this.secondName = patronymic;
+            this.patronymic = patronymic;
+            this.surName = surName;
+        }   
       
     public void setSerialAndNumberOfDoc (String serial){
     this.serialAndNumberOfDoc = serial;
@@ -64,20 +76,5 @@ public class Passport {
     char first = secondName.charAt(0);
     String firstL = first + ".";
     return firstL;
-    }
-      
-     public Passport(String name, String surName) {
-            this.name = name;            
-            this.surName = surName; 
-        }  
-     
-    public Passport(String name, String patronymic, String surName) {
-        this.name = name;     
-        this.secondName = patronymic;
-        this.patronymic = patronymic;
-        this.surName = surName;
-        }   
-    }   
-
-          
-    
+    }    
+}
